@@ -1,0 +1,35 @@
+body {
+      font-family: Arial, sans-serif;
+      background-color: #fdf6e3;
+      text-align: center;
+      margin-top: 50px;
+    }
+    h2 {
+      color: #4169e1;
+      font-size: 30px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .choices img {
+  width: 200px;        /* pick one size */
+  height: 200px;
+  margin: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  object-fit: cover;   /* crops to fit nicely */
+}
+    .choices img:hover {
+      transform: scale(1.1);
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #8e44ad;
+    }
+    #score {
+      margin-top: 15px;
+      font-size: 20px;
+      color: black;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+    }
