@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Page styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #e1b5b5, #d9a7a7);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Title */
+h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Button base style */
+.btn {
+  padding: 12px 28px;
+  margin: 12px 0;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  width: 200px;
+  height: 50px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Hover and active effects */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.1);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Difficulty colors */
+#Easy {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+#Medium {
+  background: linear-gradient(135deg, #FF9800, #e68900);
+}
+
+#Hard {
+  background: linear-gradient(135deg, #F44336, #d32f2f);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
