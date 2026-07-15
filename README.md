@@ -13,6 +13,7 @@ mini-games-hub/
 ├── TicTacToe/
 ├── RockPaperScissors/
 ├── MemoryCard/
+├── GuessTheNumber/
 └── README.md
 ```
 
