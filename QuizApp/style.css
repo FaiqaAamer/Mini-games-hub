@@ -1,0 +1,105 @@
+body { 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    background: linear-gradient(135deg, #91e2d3, #e5c9c9);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#quiz {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    max-width: 500px;
+    width: 90%;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.question { 
+    font-size: 22px; 
+    margin: 20px 0; 
+    color: #444;
+}
+
+.option {
+    display: block; 
+    margin: 12px auto;
+    padding: 12px; 
+    width: 100%;
+    max-width: 300px;
+    border: none;
+    border-radius: 10px;
+    background: #e5c9c9;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.option:hover { 
+    background: #91e2d3; 
+    color: #fff;
+    transform: scale(1.05);
+}
+
+#score { 
+    font-size: 18px; 
+    margin-top: 20px; 
+    font-weight: bold;
+    color: #333;
+}
+
+.result {
+  border-radius: 16px;
+  max-width: 400px;
+  margin: auto;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.result h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.result p {
+  font-size: 18px;
+  color: #444;
+  margin: 8px 0;
+}
+
+/* 📱 Responsive tweaks */
+@media (max-width: 650px) {
+    #quiz {
+        padding: 20px;
+        width: 75%;
+    }
+    .question {
+        font-size: 18px;
+    }
+    .option {
+        font-size: 15px;
+        max-width: 170px;
+    }
+}
