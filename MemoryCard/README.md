@@ -18,6 +18,7 @@ Open the corresponding HTML file in your browser:
 - Click on a card to flip it.
 - Match identical cards to keep them face up.
 - The game tracks your moves and displays a win message when all pairs are matched.
+- Has responsiveness across various screens
 
 ## Tech Stack
 - HTML

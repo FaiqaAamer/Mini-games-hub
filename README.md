@@ -13,6 +13,7 @@ mini-games-hub/
 ├── TicTacToe/
 ├── RockPaperScissors/
 ├── MemoryCard/
+├── GuessTheNumber/
 └── README.md
 ```
 
@@ -25,6 +26,7 @@ Every game folder contains its own source code and a `README.md` with details, r
 - [Tic Tac Toe](./TicTacToe)
 - [Rock Paper Scissors](./RockPaperScissors)
 - [Memory Card](./MemoryCard)
+- [Guess The Number](./GuessTheNumber)
 
 *(New games are added over time — check each folder's README for details.)*
 

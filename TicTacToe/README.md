@@ -7,6 +7,7 @@ A classic two-player Tic Tac Toe game played on a 3x3 grid.
 - Two players take turns marking a cell with **X** or **O**.
 - The first player to get three of their marks in a row (horizontally, vertically, or diagonally) wins.
 - If all 9 cells are filled with no winner, the game ends in a tie.
+- A line appears on the winning pattern
 
 ## How to Run
 
