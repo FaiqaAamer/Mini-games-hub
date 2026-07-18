@@ -1,18 +1,73 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom, #fdfcfb, #e2d1c3);
+  font-family: 'Poppins', sans-serif;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  padding: 25px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #3a3a3a;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+#score {
+  font-weight: 700;
+  color: #8b5e3c;
+  font-size: 20px;
+  margin: 0;
+}
+
+#start {
+  padding: 10px 25px;
+  font-size: 18px;
+  background: linear-gradient(135deg, rgba(167, 93, 40, 0.4), rgba(201, 124, 70, 0.4));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+}
+
+#message {
+  color: #8b5e3c;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 5px 0 0 0;
+}
+
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
   margin-top: 20px;
 }
 
 .hole {
   width: 100px;
-  height: 50px;
-  background: #977452;
+  height: 60px;
+  background: radial-gradient(circle at 50% 60%, #c0956a, #8b5e3c);
   border-radius: 50%;
   position: relative;
   cursor: pointer;
+  box-shadow: inset 0 5px 10px rgba(0,0,0,0.3);
 }
 
 .mole {
@@ -22,4 +77,10 @@
   position: absolute;
   top: -20px;
   left: 10px;
+}
+
+@keyframes popUp {
+  0% { top: -90px; }
+  50% { top: -25px; }
+  100% { top: -90px; }
 }
