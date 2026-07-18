@@ -14,6 +14,7 @@ mini-games-hub/
 ├── RockPaperScissors/
 ├── MemoryCard/
 ├── GuessTheNumber/
+├── QuizApp/
 └── README.md
 ```
 
@@ -27,6 +28,7 @@ Every game folder contains its own source code and a `README.md` with details, r
 - [Rock Paper Scissors](./RockPaperScissors)
 - [Memory Card](./MemoryCard)
 - [Guess The Number](./GuessTheNumber)
+- [Quiz App](./QuizApp)
 
 *(New games are added over time — check each folder's README for details.)*
 
