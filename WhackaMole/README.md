@@ -31,9 +31,9 @@ Each hit increases the score, and the game ends after a set time limit.
 ---
 
 ## Tech Stack
-**HTML**
-**CSS** 
-**JavaScript** 
+- **HTML**
+- **CSS** 
+- **JavaScript** 
 
 ---
 
