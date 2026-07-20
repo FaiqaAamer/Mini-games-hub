@@ -23,6 +23,12 @@ Open `index.html` in your browser to play.
 - Wrong guesses add parts to the hangman drawing.
 - The game displays a win or lose message when finished.
 
+## Preview
+
+Here’s how the game looks:
+
+![Hangman Game Screenshot](preview.png)
+
 ## Tech Stack
 
 - HTML
