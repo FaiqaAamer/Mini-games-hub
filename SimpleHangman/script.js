@@ -79,8 +79,8 @@ function handleGuess(letter, btn) {
   if (selectedWord.includes(letter)) {
     correctLetters.push(letter);    
   } else {
-    wrongGuesses++;
-    drawHangman(wrongGuesses);
+    wrongGuess++;
+    drawHangman(wrongGuess);
   }
 
   displayWord();
@@ -88,7 +88,7 @@ function handleGuess(letter, btn) {
   if (!wordDisplay.textContent.includes("_")) {
     message.textContent = "🎉 You won!";
     disableKeyboard();
-  } else if (wrongGuesses >= 6) {
+  } else if (wrongGuess >= 6) {
     message.textContent = "💀 Game Over! Word was " + selectedWord;
     disableKeyboard();
   }
@@ -99,6 +99,5 @@ function disableKeyboard() {
 }
 
 drawBase();
-for (let i = 1; i <= 6; i++) drawHangman(i);
 createKeyboard();
 displayWord();
