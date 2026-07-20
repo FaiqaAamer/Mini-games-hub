@@ -30,6 +30,14 @@ Each guess gives feedback - too high, too low, or correct - and tracks the numbe
 
 ---
 
+## Preview
+
+Here’s how the game looks:
+
+![Guess the Number Screenshot](preview.png)
+
+---
+
 ## Tech Stack
 - **HTML**
 - **CSS** 
