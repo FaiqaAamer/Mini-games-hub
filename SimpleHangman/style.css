@@ -1,20 +1,117 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   text-align: center;
-  background: #222;
-  color: #fff;
+  background: #1c1c1c;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
 }
+
+h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffcc00;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+}
+
 #wordDisplay {
-  font-size: 24px;
-  letter-spacing: 5px;
+  font-size: 28px;
+  letter-spacing: 8px;
+  margin: 20px 0;
+  font-weight: 500;
 }
+
+canvas {
+  background: #2b2b2b;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+}
+
+#keyboard {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
 #keyboard button {
-  margin: 5px;
+  flex: 0 1 50px;   /* default size for desktop */
+  margin: 4px;
   padding: 10px;
   font-size: 18px;
   cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background: #444;
+  color: #fff;
+  transition: all 0.2s ease;
 }
-canvas {
-  background: #333;
+
+#keyboard button:hover:not(:disabled) {
+  background: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+#keyboard button:disabled {
+  background: #666;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+#message {
   margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffcc00;
+}
+
+/*Mobile Screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  #wordDisplay {
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+
+  #keyboard button {
+    flex: 0 1 32px;   /* smaller width */
+    font-size: 14px;  /* smaller text */
+    padding: 6px 8px; /* tighter padding */
+  }
+
+  canvas {
+    max-width: 240px;
+  }
+}
+
+/*Tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  #wordDisplay {
+    font-size: 24px;
+    letter-spacing: 6px;
+  }
+
+  #keyboard button {
+    flex: 0 1 40px;
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  canvas {
+    max-width: 280px;
+  }
 }
