@@ -3,6 +3,8 @@
 A simple coding‑based quiz game where players answer multiple‑choice questions.  
 Each question tests your programming knowledge, and your score is shown at the end.
 
+---
+
 ## Rules
 
 - Read the question carefully.
@@ -11,9 +13,21 @@ Each question tests your programming knowledge, and your score is shown at the e
 - The quiz automatically moves to the next question.
 - Final score is displayed after all questions are answered.
 
+---
+
 ## How to Run
 
 Open `index.html` in your browser to start the quiz.
+
+---
+
+## Preview
+
+Here’s how the game looks:
+
+![Quiz App Screenshot](preview.png)
+
+---
 
 ## Controls
 
@@ -21,11 +35,15 @@ Open `index.html` in your browser to start the quiz.
 - The next question appears automatically.
 - At the end, your total score is displayed.
 
+---
+
 ## Tech Stack
 
 - HTML  
 - CSS  
 - JavaScript  
+
+---
 
 ## Files
 
