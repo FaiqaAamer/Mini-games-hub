@@ -1,5 +1,14 @@
-const words = ["javascript", "react", "learn", "helloworld"]
-let selectedWord = words[Math.floor(Math.random() * words.length)]
+//for random words
+// async function getRandomWord() {
+//   const response = await fetch("https://random-word-api.herokuapp.com/word?number=1");
+//   const data = await response.json();
+//   return data[0].toLowerCase();
+// }
+let words = ["elephant",
+  "giraffe", "kangaroo", "penguin", "dolphin", "crocodile", "lion", "tiger", "zebra", "cheetah", "hippopotamus", 
+  "rhinoceros", "bear", "wolf", "fox", "rabbit", "monkey", "camel", "parrot", "owl"]
+
+let selectedWord = words[Math.floor(Math.random() * words.length)] 
 let correctLetters = []
 let wrongGuess = 0
 
@@ -86,10 +95,10 @@ function handleGuess(letter, btn) {
   displayWord();
 
   if (!wordDisplay.textContent.includes("_")) {
-    message.textContent = "🎉 You won!";
+    message.textContent = "You won!";
     disableKeyboard();
   } else if (wrongGuess >= 6) {
-    message.textContent = "💀 Game Over! Word was " + selectedWord;
+    message.textContent = "Game Over! Word was " + selectedWord;
     disableKeyboard();
   }
 }
@@ -98,6 +107,15 @@ function disableKeyboard() {
   document.querySelectorAll("#keyboard button").forEach(btn => btn.disabled = true);
 }
 
-drawBase();
-createKeyboard();
-displayWord();
+async function startGame() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); 
+  correctLetters = [];
+  wrongGuess = 0;
+  message.textContent = "";
+  drawBase();
+  selectedWord
+  createKeyboard();
+  displayWord();
+}
+
+startGame();
