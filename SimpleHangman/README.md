@@ -27,7 +27,7 @@ Open `index.html` in your browser to play.
 
 Here’s how the game looks:
 
-![Hangman Game Screenshot]("\preview.png")
+![Hangman Game Screenshot](preview.png)
 
 ## Tech Stack
 
