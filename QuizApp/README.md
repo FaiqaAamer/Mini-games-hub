@@ -21,19 +21,19 @@ Open `index.html` in your browser to start the quiz.
 
 ---
 
-## Preview
-
-Here’s how the game looks:
-
-![Quiz App Screenshot](preview.png)
-
----
-
 ## Controls
 
 - Click on an option to select your answer.
 - The next question appears automatically.
 - At the end, your total score is displayed.
+
+---
+
+## Preview
+
+Here’s how the game looks:
+
+![Quiz App Screenshot](preview.png)
 
 ---
 
