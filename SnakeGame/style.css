@@ -22,14 +22,15 @@ body {
   margin: 10px;
   padding: 10px 20px;
   font-size: 16px;
-  border: 2px solid #333;
-  background: #fff;
+  border-radius: 5px;
+  border: none;
+  background: #f68a5a;
   cursor: pointer;
   transition: 0.3s;
 }
 
 #startBtn:hover, #restartBtn:hover {
-  background: #333;
+  background: #9FD356;
   color: #fff;
 }
 
@@ -44,8 +45,8 @@ body {
 }
 
 canvas {
-  border: 2px solid #333;
-  background: #fff;
+  border: none;
+  background: #C6ECAE;
 }
 
 #gameOverOverlay {

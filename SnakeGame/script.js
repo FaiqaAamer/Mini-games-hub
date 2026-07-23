@@ -33,7 +33,7 @@ function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // draw grid
-  ctx.strokeStyle = "#ddd";
+  ctx.strokeStyle = "#99C2A2";
   for(let i=0; i<canvas.width; i+=box){
     ctx.beginPath();
     ctx.moveTo(i,0);
@@ -49,7 +49,7 @@ function draw() {
 
   // draw snake
   for(let i=0; i<snake.length; i++){
-    ctx.fillStyle = i === 0 ? "green" : "lightgreen";
+    ctx.fillStyle = i === 0 ? "#007090" : "#01A7C2";
     ctx.beginPath();
     ctx.arc(snake[i].x + box/2, snake[i].y + box/2, box/2, 0, Math.PI*2);
     ctx.fill();
