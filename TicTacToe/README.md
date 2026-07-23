@@ -2,6 +2,8 @@
 
 A classic two-player Tic Tac Toe game played on a 3x3 grid.
 
+---
+
 ## Rules
 
 - Two players take turns marking a cell with **X** or **O**.
@@ -9,9 +11,13 @@ A classic two-player Tic Tac Toe game played on a 3x3 grid.
 - If all 9 cells are filled with no winner, the game ends in a tie.
 - A line appears on the winning pattern
 
+---
+
 ## How to Run
 
 Open `index.html` in your browser to play.
+
+---
 
 ## Controls
 
@@ -20,11 +26,23 @@ Open `index.html` in your browser to play.
 - The winner or tie result is displayed when the game ends.
 - Use the Reset button to play again.
 
+---
+
+## Preview
+
+Here’s how the game looks:
+
+![Tic Tac Toe Screenshot](preview.png)
+
+---
+
 ## Tech Stack
 
 - HTML
 - CSS
 - JavaScript
+
+---
 
 ## Files
 

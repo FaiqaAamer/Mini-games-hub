@@ -30,7 +30,7 @@ Every game folder contains its own source code and a `README.md` with details, r
 - [Guess The Number](./GuessTheNumber)
 - [Quiz App](./QuizApp)
 
-*(New games are added over time — check each folder's README for details.)*
+*(New games are added over time. Check each folder's README for details and each game preview.)*
 
 ---
 

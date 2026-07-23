@@ -3,6 +3,8 @@
 A classic word‑guessing game where the player tries to guess a hidden word by selecting letters from an on‑screen keyboard.  
 Each wrong guess draws part of the hangman figure. Player should guess the word before the figure is complete!
 
+---
+
 ## Rules
 
 - The computer randomly selects a word from an array or can select by using API method
@@ -12,9 +14,13 @@ Each wrong guess draws part of the hangman figure. Player should guess the word 
 - The player wins by guessing all letters before the hangman is fully drawn.
 - The game ends in defeat if the hangman is completed.
 
+---
+
 ## How to Run
 
 Open `index.html` in your browser to play.
+
+---
 
 ## Controls
 
@@ -23,17 +29,23 @@ Open `index.html` in your browser to play.
 - Wrong guesses add parts to the hangman drawing.
 - The game displays a win or lose message when finished.
 
+---
+
 ## Preview
 
 Here’s how the game looks:
 
 ![Hangman Game Screenshot](preview.png)
 
+---
+
 ## Tech Stack
 
 - HTML
 - CSS
 - JavaScript (Canvas for drawing)
+
+---
 
 ## Files
 ```

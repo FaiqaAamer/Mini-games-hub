@@ -2,6 +2,8 @@
 
 A simple Player vs Computer Rock Paper Scissors game.This is an infinite game.
 
+---
+
 ## Rules
 
 - Choose **Rock**, **Paper**, or **Scissors**.
@@ -9,9 +11,13 @@ A simple Player vs Computer Rock Paper Scissors game.This is an infinite game.
 - Rock beats Scissors, Scissors beats Paper, Paper beats Rock.
 - Matching choices result in a tie.
 
+---
+
 ## How to Run
 
 Open `index.html` in your browser to play.
+
+---
 
 ## Controls
 
@@ -19,11 +25,23 @@ Open `index.html` in your browser to play.
 - The result (Win / Lose / Tie) is shown instantly.
 - Score is tracked across rounds.
 
+---
+
+## Preview
+
+Here’s how the game looks:
+
+![Rock Paper Scissors Screenshot](preview.png)
+
+---
+
 ## Tech Stack
 
 - HTML
 - CSS
 - JavaScript
+
+---
 
 ## Files
 

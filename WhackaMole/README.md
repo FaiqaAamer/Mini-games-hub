@@ -30,6 +30,14 @@ Each hit increases the score, and the game ends after a set time limit.
 
 ---
 
+## Preview
+
+Here’s how the game looks:
+
+![Whack a Mole Screenshot](preview.png)
+
+---
+
 ## Tech Stack
 - HTML
 - CSS 
