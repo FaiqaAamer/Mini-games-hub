@@ -94,6 +94,7 @@ function draw() {
     collision(newHead, snake)
   ) {
     clearInterval(game);
+    document.getElementById("finalScore").textContent = "Score : " + score; 
     gameOverOverlay.style.display = "block";
     return;
   }
