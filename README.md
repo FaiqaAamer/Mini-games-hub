@@ -17,6 +17,7 @@ mini-games-hub/
 ├── SimpleHangman/
 ├── SnakeGame/
 ├── TicTacToe/
+├── WhackaMole/
 └── README.md
 ```
 
@@ -33,6 +34,7 @@ Every game folder contains its own source code and a `README.md` with details, r
 - [Simple Hangman](./SimpleHangman)
 - [Snake Game](./SnakeGame)
 - [Tic Tac Toe](./TicTacToe)
+- [Whack a Mole](./WhackaMole)
 
 *(New games are added over time. Check each folder's README for details and each game preview.)*
 
