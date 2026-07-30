@@ -14,6 +14,8 @@ mini-games-hub/
 ├── MemoryCard/
 ├── QuizApp/
 ├── RockPaperScissors/
+├── SimpleHangman/
+├── SnakeGame/
 ├── TicTacToe/
 └── README.md
 ```
@@ -28,6 +30,8 @@ Every game folder contains its own source code and a `README.md` with details, r
 - [Memory Card](./MemoryCard)
 - [Quiz App](./QuizApp)
 - [Rock Paper Scissors](./RockPaperScissors)
+- [Simple Hangman](./SimpleHangman)
+- [Snake Game](./SnakeGame)
 - [Tic Tac Toe](./TicTacToe)
 
 *(New games are added over time. Check each folder's README for details and each game preview.)*
