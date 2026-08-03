@@ -7,9 +7,11 @@ const gameOverOverlay = document.getElementById("gameOverOverlay");
 
 const box = 23;
 let snake, direction, food, score, game;
+let directions = []; // track direction of each segment
 
 function initGame() {
   snake = [{x: 9 * box, y: 10 * box}];
+  directions = ["RIGHT"];
   direction = "RIGHT";
   score = 0;
   food = {
@@ -22,11 +24,11 @@ function initGame() {
 
 document.addEventListener("keydown", changeDirection);
 
-function changeDirection(event){
-  if(event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
-  else if(event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
-  else if(event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
-  else if(event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+function changeDirection(event) {
+  if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
+  else if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
+  else if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
+  else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
 }
 
 function draw() {
@@ -34,39 +36,46 @@ function draw() {
 
   // draw grid
   ctx.strokeStyle = "#99C2A2";
-  for(let i=0; i<canvas.width; i+=box){
+  for (let i = 0; i < canvas.width; i += box) {
     ctx.beginPath();
-    ctx.moveTo(i,0);
-    ctx.lineTo(i,canvas.height);
+    ctx.moveTo(i, 0);
+    ctx.lineTo(i, canvas.height);
     ctx.stroke();
   }
-  for(let j=0; j<canvas.height; j+=box){
+  for (let j = 0; j < canvas.height; j += box) {
     ctx.beginPath();
-    ctx.moveTo(0,j);
-    ctx.lineTo(canvas.width,j);
+    ctx.moveTo(0, j);
+    ctx.lineTo(canvas.width, j);
     ctx.stroke();
   }
 
   // draw snake
-  for(let i=0; i<snake.length; i++){
+  for (let i = 0; i < snake.length; i++) {
     ctx.fillStyle = i === 0 ? "#007090" : "#01A7C2";
-    ctx.beginPath();
-    ctx.arc(snake[i].x + box/2, snake[i].y + box/2, box/2, 0, Math.PI*2);
-    ctx.fill();
+    const segDir = directions[i];
+
+    if (i === 0) {
+      // Head
+      if (score === 0) {
+        ctx.beginPath();
+        ctx.arc(snake[i].x + box/2, snake[i].y + box/2, box/2, 0, Math.PI*2);
+        ctx.fill();
+      } else {
+        drawHybridSegment(snake[i].x, snake[i].y, segDir, true);
+      }
+    } else if (i === snake.length - 1) {
+      // Tail
+      drawHybridSegment(snake[i].x, snake[i].y, segDir, false);
+    } else {
+      // Body
+      ctx.fillRect(snake[i].x, snake[i].y, box, box);
+    }
   }
 
   // draw apple
-  ctx.beginPath();
-  ctx.arc(food.x + box/2, food.y + box/2, box/2, 0, Math.PI*2);
-  ctx.fillStyle = "red";
-  ctx.fill();
-  ctx.fillStyle = "brown";
-  ctx.fillRect(food.x + box/2 - 2, food.y + 2, 4, 6);
-  ctx.beginPath();
-  ctx.arc(food.x + box/2 + 6, food.y + 6, 4, 0, Math.PI*2);
-  ctx.fillStyle = "green";
-  ctx.fill();
+  drawApple(food.x, food.y);
 
+  // move snake
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
@@ -84,9 +93,12 @@ function draw() {
     };
   } else {
     snake.pop();
+    directions.pop();
   }
 
-  let newHead = { x: snakeX, y: snakeY };
+  let newHead = {x: snakeX, y: snakeY};
+  snake.unshift(newHead);
+  directions.unshift(direction);
 
   if (
     snakeX < 0 || snakeY < 0 ||
@@ -94,16 +106,79 @@ function draw() {
     collision(newHead, snake)
   ) {
     clearInterval(game);
-    document.getElementById("finalScore").textContent = "Score : " + score; 
+    document.getElementById("finalScore").textContent = "Score : " + score;
     gameOverOverlay.style.display = "block";
     return;
   }
+}
 
-  snake.unshift(newHead);
+function drawHybridSegment(x, y, dir, isHead) {
+  if (dir === "LEFT") {
+    if (isHead) {
+      ctx.fillRect(x + box/2, y, box/2, box);
+      ctx.beginPath();
+      ctx.arc(x + box/2, y + box/2, box/2, Math.PI/2, Math.PI*1.5);
+      ctx.fill();
+    } else {
+      ctx.fillRect(x, y, box/2, box);
+      ctx.beginPath();
+      ctx.arc(x + box/2, y + box/2, box/2, -Math.PI/2, Math.PI/2);
+      ctx.fill();
+    }
+  } else if (dir === "RIGHT") {
+    if (isHead) {
+      ctx.fillRect(x, y, box/2, box);
+      ctx.beginPath();
+      ctx.arc(x + box/2, y + box/2, box/2, -Math.PI/2, Math.PI/2);
+      ctx.fill();
+    } else {
+      ctx.fillRect(x + box/2, y, box/2, box);
+      ctx.beginPath();
+      ctx.arc(x + box/2, y + box/2, box/2, Math.PI/2, Math.PI*1.5);
+      ctx.fill();
+    }
+  } else if (dir === "UP") {
+    if (isHead) {
+      ctx.fillRect(x, y + box/2, box, box/2);
+      ctx.beginPath();
+      ctx.arc(x + box/2, y + box/2, box/2, Math.PI, 0);
+      ctx.fill();
+    } else {
+      ctx.fillRect(x, y, box, box/2);
+      ctx.beginPath();
+      ctx.arc(x + box/2, y + box/2, box/2, 0, Math.PI);
+      ctx.fill();
+    }
+  } else if (dir === "DOWN") {
+    if (isHead) {
+      ctx.fillRect(x, y, box, box/2);
+      ctx.beginPath();
+      ctx.arc(x + box/2, y + box/2, box/2, 0, Math.PI);
+      ctx.fill();
+    } else {
+      ctx.fillRect(x, y + box/2, box, box/2);
+      ctx.beginPath();
+      ctx.arc(x + box/2, y + box/2, box/2, Math.PI, 0);
+      ctx.fill();
+    }
+  }
+}
+
+function drawApple(x, y) {
+  ctx.beginPath();
+  ctx.arc(x + box/2, y + box/2, box/2, 0, Math.PI*2);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  ctx.fillStyle = "brown";
+  ctx.fillRect(x + box/2 - 2, y + 2, 4, 6);
+  ctx.beginPath();
+  ctx.arc(x + box/2 + 6, y + 6, 4, 0, Math.PI*2);
+  ctx.fillStyle = "green";
+  ctx.fill();
 }
 
 function collision(head, array) {
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 1; i < array.length; i++) {
     if (head.x === array[i].x && head.y === array[i].y) return true;
   }
   return false;
@@ -112,11 +187,11 @@ function collision(head, array) {
 startBtn.addEventListener("click", () => {
   initGame();
   clearInterval(game);
-  game = setInterval(draw, 100);
+  game = setInterval(draw, 125);
 });
 
 restartBtn.addEventListener("click", () => {
   initGame();
   clearInterval(game);
-  game = setInterval(draw, 100);
+  game = setInterval(draw, 125);
 });
