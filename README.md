@@ -10,11 +10,14 @@ This repo is organized as one folder per game:
 
 ```
 mini-games-hub/
-├── TicTacToe/
-├── RockPaperScissors/
-├── MemoryCard/
 ├── GuessTheNumber/
+├── MemoryCard/
 ├── QuizApp/
+├── RockPaperScissors/
+├── SimpleHangman/
+├── SnakeGame/
+├── TicTacToe/
+├── WhackaMole/
 └── README.md
 ```
 
@@ -24,11 +27,14 @@ Every game folder contains its own source code and a `README.md` with details, r
 
 ## Games
 
-- [Tic Tac Toe](./TicTacToe)
-- [Rock Paper Scissors](./RockPaperScissors)
-- [Memory Card](./MemoryCard)
 - [Guess The Number](./GuessTheNumber)
+- [Memory Card](./MemoryCard)
 - [Quiz App](./QuizApp)
+- [Rock Paper Scissors](./RockPaperScissors)
+- [Simple Hangman](./SimpleHangman)
+- [Snake Game](./SnakeGame)
+- [Tic Tac Toe](./TicTacToe)
+- [Whack a Mole](./WhackaMole)
 
 *(New games are added over time. Check each folder's README for details and each game preview.)*
 
