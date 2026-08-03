@@ -33,7 +33,7 @@ Open `index.html` in your browser and click **Start Game** to begin.
 
 Here’s how the game looks:
 
-![Snake Game Screenshot](preview.png)
+![Snake Game Screenshot](Preview.png)
 
 ---
 
