@@ -16,6 +16,7 @@ mini-games-hub/
 ├── RockPaperScissors/
 ├── SimpleHangman/
 ├── SnakeGame/
+├── Sudoku/
 ├── TicTacToe/
 ├── WhackaMole/
 └── README.md
@@ -33,6 +34,7 @@ Every game folder contains its own source code and a `README.md` with details, r
 - [Rock Paper Scissors](./RockPaperScissors)
 - [Simple Hangman](./SimpleHangman)
 - [Snake Game](./SnakeGame)
+- [Sudoku](./Sudoku)
 - [Tic Tac Toe](./TicTacToe)
 - [Whack a Mole](./WhackaMole)
 
