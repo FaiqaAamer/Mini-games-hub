@@ -16,6 +16,7 @@ mini-games-hub/
 ├── RockPaperScissors/
 ├── SimpleHangman/
 ├── SnakeGame/
+├── Sudoku/
 ├── TicTacToe/
 ├── WhackaMole/
 └── README.md
