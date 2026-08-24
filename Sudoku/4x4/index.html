@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudoku 4×4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <div class="eyebrow" id="diffLabel">Hard</div>
+    <h1>Sudoku 4×4</h1>
+    <p id="message"></p>
+
+    <div class="board-frame">
+      <div class="grid" id="grid"></div>
+    </div>
+
+    <div class="controls" id="numberControls">
+      <button class="num-btn" data-num="1">1</button>
+      <button class="num-btn" data-num="2">2</button>
+      <button class="num-btn" data-num="3">3</button>
+      <button class="num-btn" data-num="4">4</button>
+    </div>
+
+    <div class="bottom-row">
+      <div class="diff-toggle" id="diffToggle">
+        <button class="diff-btn" data-diff="easy">Easy</button>
+        <button class="diff-btn" data-diff="hard">Hard</button>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <button class="icon-btn" id="restartBtn">Restart</button>
+    </div>
+  </div>
+<script src="script.js"></script>
+
+</body>
+</html>
