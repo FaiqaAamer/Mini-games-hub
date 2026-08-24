@@ -76,5 +76,6 @@ Open source under the [MIT License](LICENSE).
 ---
 
 ## Connect with me
-- 🌐 GitHub: https://github.com/FaiqaAamer  
-- 💼 LinkedIn: https://www.linkedin.com/in/faiqa-aamer-a84a083ab/
+- GitHub: https://github.com/FaiqaAamer  
+- LinkedIn: https://www.linkedin.com/in/faiqa-aamer-a84a083ab/
+- Gmail: techwithfaiqa04@gmail.com
