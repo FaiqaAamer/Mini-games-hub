@@ -4,7 +4,6 @@
   const diffLabelEl = document.getElementById('diffLabel');
   let selectedIndex = null, puzzle = [], solution = [], given = [], difficulty = 'hard';
 
-  // ✅ Example solved 9×9 Sudoku board
   const BOARDS = {
     easy: {
       solution: [
@@ -47,7 +46,6 @@
     }
   };
 
-  // ✅ Randomly select given cells
   function randomMask(size, count) {
     const mask = Array(size).fill(0);
     let chosen = 0;
@@ -65,7 +63,6 @@
     const board = BOARDS[difficulty];
     solution = [...board.solution];
 
-    // ✅ Different clue counts per difficulty
     let clueCount;
     if (difficulty === 'easy') clueCount = 36;
     else if (difficulty === 'medium') clueCount = 30;
@@ -81,16 +78,16 @@
     selectedIndex = null;
     messageEl.textContent = '';
     puzzle.forEach((num, i) => {
-      const cell = document.createElement('div');
-      cell.className = 'cell';
-      cell.dataset.index = i;
-      cell.textContent = num || '';
-      if (given[i]) cell.classList.add('given');
-      if (num && !given[i]) cell.classList.add('user-input');
-      cell.onclick = () => selectCell(i);
-      gridEl.appendChild(cell);
+        const cell = document.createElement('div');
+        cell.className = 'cell';
+        cell.dataset.index = i;
+        cell.textContent = num || '';
+        if (given[i]) cell.classList.add('given');
+        if (num && !given[i]) cell.classList.add('user-input');
+        cell.onclick = () => selectCell(i);
+        gridEl.appendChild(cell);
     });
-  }
+    }
 
   function selectCell(i) {
     if (selectedIndex !== null) gridEl.children[selectedIndex].classList.remove('selected');
@@ -117,7 +114,12 @@
       setMessage('Wrong number', 'bad');
     } else {
       const remaining = puzzle.filter((v, j) => !given[j] && v === '').length;
-      setMessage(remaining ? `Correct, ${remaining} to go` : '🎉 Solved!', 'ok');
+      if (remaining) {
+        setMessage(`Correct, ${remaining} to go`, 'ok');
+        } else {
+        setMessage('Puzzle Completed!', 'win');
+        Array.from(gridEl.children).forEach(c => c.classList.add('solved'));
+        }
     }
   }
 

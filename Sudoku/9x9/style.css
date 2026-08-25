@@ -208,3 +208,15 @@ h1 {
   .cell { width: 32px; height: 32px; font-size: 14px; }
   #game { padding: 16px; }
 }
+
+@keyframes solvedPulse {
+  0%   { background: var(--cell); }
+  25%  { background: var(--brass); color: var(--paper); }
+  50%  { background: var(--success); color: var(--paper); }
+  75%  { background: var(--brass-dark); color: var(--paper); }
+  100% { background: var(--cell); color: var(--ink); }
+}
+
+.cell.solved {
+  animation: solvedPulse 1.2s 
+}
