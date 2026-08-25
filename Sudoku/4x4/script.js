@@ -78,7 +78,13 @@
       setMessage('Wrong number','bad');
     } else {
       const remaining = puzzle.filter((v,j)=>!given[j] && v==='').length;
-      setMessage(remaining? `Correct, ${remaining} to go` : 'Solved!','ok');
+      if (remaining) {
+        setMessage(`Correct, ${remaining} to go`, 'ok');
+      } else {
+        setMessage('Puzzle Completed!', 'win');
+        Array.from(gridEl.children).forEach(c => c.classList.add('solved'));
+}
+
     }
   }
 

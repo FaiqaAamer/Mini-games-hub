@@ -217,3 +217,16 @@ font-family: 'Courier New', monospace;
     .cell { width: 52px; height: 52px; font-size: 20px; }
     #game { padding: 26px 20px 24px; }
   }
+
+
+@keyframes solvedPulse {
+  0%   { background: var(--cell); color: var(--ink); }
+  25%  { background: var(--brass); color: var(--paper); }
+  50%  { background: var(--success); color: var(--paper); }
+  75%  { background: var(--brass-dark); color: var(--paper); }
+  100% { background: var(--cell); color: var(--ink); }
+}
+
+.cell.solved {
+  animation: solvedPulse 1.2s ease-in-out;
+}
