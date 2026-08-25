@@ -1,0 +1,210 @@
+:root {
+  --paper: #f3ecd9;
+  --paper-dark: #e9dfc4;
+  --ink: #232c3d;
+  --ink-soft: #5a6478;
+  --brass: #b3862f;
+  --brass-dark: #8a6521;
+  --error: #b4432f;
+  --success: #4f7a5a;
+  --cell: #fbf7ec;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  background: var(--paper);
+  padding: 24px;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brass-dark);
+  font-weight: 600;
+  position: relative;
+  margin-bottom: -10px;
+}
+
+.eyebrow::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1.5px;
+  margin: 6px auto 0;
+  border-radius: 2px;
+}
+
+h1 {
+  margin: 8px 0;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--ink);
+}
+
+#message {
+  margin-top: -5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--brass);
+}
+#message.ok { color: var(--success); }
+#message.bad { color: var(--error); }
+#message.win { color: var(--brass-dark); font-family: 'Fraunces', serif; font-size: 17px; }
+
+.board-frame {
+  padding: 3px;
+  border-radius: 12px;
+  background: linear-gradient(155deg, var(--brass), var(--brass-dark));
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 44px);
+  grid-template-rows: repeat(9, 44px);
+  background: var(--brass-dark);
+  gap: 1px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cell {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  background: var(--cell);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.cell.given {
+  background: #f1e9d4;
+  cursor: default;
+}
+
+.cell.user-input {
+  color: var(--brass-dark);
+  font-family: 'Courier New', monospace;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.cell.selected {
+  background: #fff3cf;
+  box-shadow: inset 0 0 0 2px var(--brass);
+}
+
+.cell.wrong {
+  background: rgba(180,67,47,0.16);
+  color: var(--error);
+}
+
+.cell:nth-child(3n) { border-right: 2px solid var(--brass-dark); }
+.cell:nth-child(9n) { border-right: none; }
+.cell:nth-child(n+28):nth-child(-n+36),
+.cell:nth-child(n+55):nth-child(-n+63) { border-top: 2px solid var(--brass-dark); }
+
+.controls {
+  margin-top: 18px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.num-btn, .icon-btn {
+  width: 44px;
+  height: 44px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  border-radius: 9px;
+  background: var(--ink);
+  color: var(--paper);
+  cursor: pointer;
+  transition: transform 100ms ease, background 120ms ease;
+}
+
+.num-btn:hover, .icon-btn:hover { background: #34405a; transform: translateY(-2px); }
+.num-btn:active, .icon-btn:active { transform: translateY(0); }
+
+.icon-btn {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1.5px solid rgba(35,44,61,0.25);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  width: auto;
+  padding: 0 16px;
+}
+.icon-btn:hover { color: var(--ink); border-color: var(--ink); background: transparent; }
+
+.bottom-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.diff-toggle {
+  display: flex;
+  border: 1.5px solid rgba(35,44,61,0.25);
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.diff-btn {
+  border: none;
+  border: 1px solid rgba(35,44,61,0.25);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 20px;
+  height: 42px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.diff-btn.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.hint {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--ink-soft);
+  opacity: 0.7;
+}
+
+@media (max-width: 420px) {
+  .grid { grid-template-columns: repeat(9, 32px); grid-template-rows: repeat(9, 32px); }
+  .cell { width: 32px; height: 32px; font-size: 14px; }
+  #game { padding: 16px; }
+}
